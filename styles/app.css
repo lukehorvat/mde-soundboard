@@ -1,0 +1,10 @@
+body {
+  background: radial-gradient(white, yellow, orange, red) fixed;
+  font-size: 1.5em;
+}
+
+h1, h3 {
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  text-transform: uppercase;
+}
