@@ -17,6 +17,7 @@ $(function() {
           text: sound.name,
           disabled: "disabled"
         }).on("click", function() {
+          soundManager.stopAll();
           soundManager.getSoundById(sound.name).play();
         }).appendTo("#sounds");
 
