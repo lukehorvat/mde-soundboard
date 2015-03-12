@@ -7,7 +7,12 @@ body {
 h1, h3, button {
   font-family: "Changa One", cursive;
   text-transform: uppercase;
-  text-shadow: 0px 2px 10px #666;
+}
+
+h1, h3 {
+  text-shadow: 0px 1px 2px #444;
+  transform: perspective(300px) rotateX(25deg);
+  transform-origin: 50% 100%;
 }
 
 h1 {
