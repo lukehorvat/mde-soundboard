@@ -1,0 +1,24 @@
+{
+  "serverPort": 9000,
+  "buildDir": "dist",
+  "index": "src/index.html",
+  "scripts": [
+    "bower_components/zepto/zepto.js",
+    "bower_components/SoundManager2/script/soundmanager2-nodebug.js",
+    "src/scripts/**/*.js"
+  ],
+  "styles": [
+    "src/styles/**/*.css"
+  ],
+  "misc": [
+    "src/images/**/*.{ico,gif,jpg,png}",
+    "src/sounds/**/*.mp3"
+  ],
+  "environments": [{
+    "name": "development",
+    "minify": false
+  }, {
+    "name": "production",
+    "minify": true
+  }]
+}

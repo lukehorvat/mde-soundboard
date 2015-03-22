@@ -1,0 +1,9 @@
+{
+  "name": "mde-soundboard",
+  "private": true,
+  "dependencies": {
+    "zepto": "1.1.6",
+    "SoundManager2": "git@github.com:Soniflow/SoundManager2.git"
+  },
+  "devDependencies": {}
+}

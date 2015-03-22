@@ -1,3 +1,5 @@
+@import url("//fonts.googleapis.com/css?family=Changa+One");
+
 body {
   background: radial-gradient(#ff7777, #ff2222) fixed;
   margin: 50px;
@@ -5,7 +7,7 @@ body {
 }
 
 h1, h3, button {
-  font-family: "Changa One", cursive;
+  font-family: "Changa One", "Courier New", monospace;
   text-transform: uppercase;
 }
 
@@ -28,16 +30,13 @@ button {
   background: #ff9999;
   border: 2px solid #ff5555;
   border-radius: 10px;
+  margin: 10px;
   padding: 10px 20px;
 }
 
 button:hover {
   background: #ffaaaa;
   cursor: pointer;
-}
-
-button + button {
-  margin-left: 10px;
 }
 
 #github-fork > img {
