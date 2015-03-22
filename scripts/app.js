@@ -1,24 +1,78 @@
 var sounds = [{
-  name: "Sound A",
-  url: "//upload.wikimedia.org/wikipedia/commons/d/d9/Wilhelm_Scream.ogg"
+  name: "My name is",
+  file: "my-name-is.mp3"
 }, {
-  name: "Sound B",
-  url: "//upload.wikimedia.org/wikipedia/commons/c/c8/Kk-kazakh.ogg"
+  name: "You're a really talented guy",
+  file: "youre-a-really-talented-guy.mp3"
 }, {
-  name: "Sound C",
-  url: "//upload.wikimedia.org/wikipedia/commons/7/71/En-us-amidst_the_mists.ogg"
+  name: "When life sucks",
+  file: "when-life-sucks.mp3"
 }, {
-  name: "Sound D",
-  url: "//upload.wikimedia.org/wikipedia/commons/8/86/Dane_Zajc.ogg"
+  name: "You should see my kid",
+  file: "you-should-see-my-kid.mp3"
 }, {
-  name: "Sound E",
-  url: "//upload.wikimedia.org/wikipedia/commons/b/b4/Godzilla.ogg"
+  name: "I'm proud of my son",
+  file: "im-proud-of-my-son.mp3"
 }, {
-  name: "Sound F",
-  url: "//upload.wikimedia.org/wikipedia/commons/3/36/Sv-pappa.ogg"
+  name: "Gendersmash music",
+  file: "gendersmash-music.mp3"
 }, {
-  name: "Sound G",
-  url: "//upload.wikimedia.org/wikipedia/commons/f/fb/Fi-pyry.ogg"
+  name: "Big jelly donut gut",
+  file: "big-jelly-donut-gut.mp3"
+}, {
+  name: "Munch munch munch",
+  file: "munch-munch-munch.mp3"
+}, {
+  name: "He's different",
+  file: "hes-different.mp3"
+}, {
+  name: "Sure, I'll get the job done (1)",
+  file: "sure-ill-get-the-job-done-1.mp3"
+}, {
+  name: "Sure, I'll get the job done (2)",
+  file: "sure-ill-get-the-job-done-2.mp3"
+}, {
+  name: "Sure, I'll get the job done (3)",
+  file: "sure-ill-get-the-job-done-3.mp3"
+}, {
+  name: "Need it / breathe it",
+  file: "need-it-breathe-it.mp3"
+}, {
+  name: "What inspires me",
+  file: "what-inspires-me.mp3"
+}, {
+  name: "We're just gonna kill 'em",
+  file: "were-just-gonna-kill-em.mp3"
+}, {
+  name: "Information retention",
+  file: "information-retention.mp3"
+}, {
+  name: "Brooklyn by far",
+  file: "brooklyn-by-far.mp3"
+}, {
+  name: "Look at my hands",
+  file: "look-at-my-hands.mp3"
+}, {
+  name: "Underworld",
+  file: "underworld.mp3"
+}, {
+  name: "You jelly?",
+  file: "you-jelly.mp3"
+}, {
+  name: "Cut yourself",
+  file: "cut-yourself.mp3"
+}, {
+  name: "New York credibility",
+  file: "new-york-credibility.mp3"
+}, {
+  name: "Adopt a Cambodian kid",
+  file: "adopt-a-cambodian-kid.mp3"
+}, {
+  name: "You a gamer dude?",
+  file: "you-a-gamer-dude.mp3"
+}, {
+  name: "Lee mee alon",
+  file: "lee-mee-alon.mp3"
 }];
 
 $(function() {
@@ -35,7 +89,7 @@ $(function() {
 
         soundManager.createSound({
           id: sound.name,
-          url: sound.url,
+          url: "sounds/" + sound.file,
           autoLoad: true,
           onload: function() {
             button.removeAttr("disabled");
