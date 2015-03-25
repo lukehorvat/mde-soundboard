@@ -5,9 +5,6 @@ var sounds = [{
   name: "You're a really talented guy",
   file: "youre-a-really-talented-guy.mp3"
 }, {
-  name: "When life sucks",
-  file: "when-life-sucks.mp3"
-}, {
   name: "You should see my kid",
   file: "you-should-see-my-kid.mp3"
 }, {
@@ -65,6 +62,18 @@ var sounds = [{
   name: "New York credibility",
   file: "new-york-credibility.mp3"
 }, {
+  name: "You wanna be safe? (1)",
+  file: "you-wanna-be-safe-1.mp3"
+}, {
+  name: "You wanna be safe? (2)",
+  file: "you-wanna-be-safe-2.mp3"
+}, {
+  name: "You wanna be safe? (3)",
+  file: "you-wanna-be-safe-3.mp3"
+}, {
+  name: "You wanna be safe? (4)",
+  file: "you-wanna-be-safe-4.mp3"
+}, {
   name: "Adopt a Cambodian kid",
   file: "adopt-a-cambodian-kid.mp3"
 }, {
@@ -73,6 +82,18 @@ var sounds = [{
 }, {
   name: "Lee mee alon",
   file: "lee-mee-alon.mp3"
+}, {
+  name: "When life sucks",
+  file: "when-life-sucks.mp3"
+}, {
+  name: "Baby want milk",
+  file: "baby-want-milk.mp3"
+}, {
+  name: "You know I'm smooth",
+  file: "you-know-im-smooth.mp3"
+}, {
+  name: "Do not sexualize me",
+  file: "do-not-sexualize-me.mp3"
 }];
 
 $(function() {
