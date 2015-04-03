@@ -1,25 +1,25 @@
-var $ = require("jquery");
-var soundManager = require("SoundManager2").soundManager;
-var sounds = require("./sounds");
+import $ from "jquery";
+import {soundManager} from "SoundManager2";
+import sounds from "./sounds";
 
-$(function() {
+$(() => {
   soundManager.setup({
     debugMode: false,
-    onready: function() {
-      sounds.forEach(function(sound) {
-        var button = $("<button />", {
+    onready: () => {
+      sounds.forEach(sound => {
+        let button = $("<button />", {
           text: sound.name,
           disabled: "disabled"
-        }).on("click", function() {
+        }).on("click", () => {
           soundManager.stopAll();
           soundManager.getSoundById(sound.name).play();
         }).appendTo("#sounds");
 
         soundManager.createSound({
           id: sound.name,
-          url: "sounds/" + sound.file,
+          url: `sounds/${sound.file}`,
           autoLoad: true,
-          onload: function() {
+          onload: () => {
             button.removeAttr("disabled");
           }
         });

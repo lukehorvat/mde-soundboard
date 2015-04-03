@@ -13,6 +13,7 @@ var rev = require("gulp-rev");
 var watch = require("gulp-watch");
 var plumber = require("gulp-plumber");
 var browserify = require("browserify");
+var babelify = require("babelify");
 var source = require("vinyl-source-stream");
 var buffer = require("vinyl-buffer");
 var rimraf = require("rimraf");
@@ -41,7 +42,8 @@ if (!env) {
 gutil.log(gutil.colors.gray("Selected environment = " + env.name + "."));
 
 gulp.task("build-scripts", function() {
-  return browserify({ entries: "./" + config.scripts })
+  return browserify("./" + config.script)
+    .transform(babelify)
     .bundle()
     .on("error", function(err) {
       gutil.log(gutil.colors.red(err.message));
@@ -57,7 +59,7 @@ gulp.task("build-scripts", function() {
 
 gulp.task("build-styles", function() {
   return gulp
-    .src(config.styles)
+    .src(config.style)
     .pipe(plumber(function(err) {
       gutil.log(gutil.colors.red(err.message));
       gutil.beep();

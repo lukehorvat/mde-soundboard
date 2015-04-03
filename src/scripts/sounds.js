@@ -1,4 +1,4 @@
-module.exports = [{
+export default [{
   name: "My name is",
   file: "my-name-is.mp3"
 }, {
