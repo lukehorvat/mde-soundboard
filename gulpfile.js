@@ -1,15 +1,20 @@
 var config = require("./gulpconfig");
 var gulp = require("gulp");
 var gutil = require("gulp-util");
-var concat = require("gulp-concat");
-var filter = require("gulp-filter");
 var gulpif = require("gulp-if");
+var filter = require("gulp-filter");
 var inject = require("gulp-inject");
 var livereload = require("gulp-livereload");
 var uglify = require("gulp-uglify");
 var minifyCSS = require("gulp-minify-css");
+var less = require("gulp-less");
+var rename = require("gulp-rename");
 var rev = require("gulp-rev");
 var watch = require("gulp-watch");
+var plumber = require("gulp-plumber");
+var browserify = require("browserify");
+var source = require("vinyl-source-stream");
+var buffer = require("vinyl-buffer");
 var rimraf = require("rimraf");
 var runSequence = require("run-sequence");
 var express = require("express");
@@ -36,9 +41,15 @@ if (!env) {
 gutil.log(gutil.colors.gray("Selected environment = " + env.name + "."));
 
 gulp.task("build-scripts", function() {
-  return gulp
-    .src(config.scripts)
-    .pipe(concat(env.name + ".js"))
+  return browserify({ entries: "./" + config.scripts })
+    .bundle()
+    .on("error", function(err) {
+      gutil.log(gutil.colors.red(err.message));
+      gutil.beep();
+      this.emit("end");
+    })
+    .pipe(source(env.name + ".js")) // Convert from Browserify stream to vinyl stream.
+    .pipe(buffer()) // Convert from streaming mode to buffered mode.
     .pipe(gulpif(env.minify, uglify({ mangle: false })))
     .pipe(rev())
     .pipe(gulp.dest(config.buildDir + "/scripts"));
@@ -47,7 +58,12 @@ gulp.task("build-scripts", function() {
 gulp.task("build-styles", function() {
   return gulp
     .src(config.styles)
-    .pipe(concat(env.name + ".css"))
+    .pipe(plumber(function(err) {
+      gutil.log(gutil.colors.red(err.message));
+      gutil.beep();
+    }))
+    .pipe(less())
+    .pipe(rename(env.name + ".css"))
     .pipe(gulpif(env.minify, minifyCSS()))
     .pipe(rev())
     .pipe(gulp.dest(config.buildDir + "/styles"));
@@ -84,7 +100,7 @@ gulp.task("clean", function(done) {
 });
 
 gulp.task("build", ["clean"], function(done) {
-  return runSequence("build-scripts", "build-styles", "build-misc", "build-index", done);
+  runSequence("build-scripts", "build-styles", "build-misc", "build-index", done);
 });
 
 gulp.task("serve", ["build"], function(done) {
@@ -99,8 +115,7 @@ gulp.task("reload", function() {
 });
 
 gulp.task("watch", ["serve", "reload"], function() {
-  var files = [].concat(config.scripts, config.styles, config.misc, config.index);
-  return watch(files, function() { runSequence("build", "reload"); });
+  return watch(config.sourceDir, function() { runSequence("build", "reload"); });
 });
 
 gulp.task("default", function() {

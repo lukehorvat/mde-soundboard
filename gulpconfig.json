@@ -1,14 +1,13 @@
 {
   "serverPort": 9000,
+  "sourceDir": "src",
   "buildDir": "dist",
   "index": "src/index.html",
   "scripts": [
-    "bower_components/zepto/zepto.js",
-    "bower_components/SoundManager2/script/soundmanager2-nodebug.js",
-    "src/scripts/**/*.js"
+    "src/scripts/app.js"
   ],
   "styles": [
-    "src/styles/**/*.css"
+    "src/styles/app.less"
   ],
   "misc": [
     "src/images/**/*.{ico,gif,jpg,png}",

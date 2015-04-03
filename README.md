@@ -12,8 +12,7 @@ To run a local instance, issue the following commands:
 
 ```bash
 $ npm install
-$ bower install
-$ gulp watch
+$ npm start
 ```
 
 This installs all dependencies and serves the soundboard on port 9000.
