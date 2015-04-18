@@ -29,7 +29,7 @@ if (config.environments.length <= 0) {
 
 for (var i = 0; i < config.environments.length; i++) {
   var e = config.environments[i];
-  if (e.name == (process.env.NODE_ENV || "development")) {
+  if (e.name === (process.env.NODE_ENV || "development")) {
     env = e;
     break;
   }
@@ -120,7 +120,4 @@ gulp.task("watch", ["serve", "reload"], function() {
   return watch(config.sourceDir, function() { runSequence("build", "reload"); });
 });
 
-gulp.task("default", function() {
-  // The default task (i.e. "gulp" via the CLI).
-  gulp.start("build");
-});
+gulp.task("default", ["build"]);

@@ -83,6 +83,9 @@ export default [{
   name: "Lee mee alon",
   file: "lee-mee-alon.mp3"
 }, {
+  name: "Oopsy-daisy!",
+  file: "oopsy-daisy.mp3"
+}, {
   name: "When life sucks",
   file: "when-life-sucks.mp3"
 }, {
@@ -91,6 +94,9 @@ export default [{
 }, {
   name: "You know I'm smooth",
   file: "you-know-im-smooth.mp3"
+}, {
+  name: "Just like da Vinci",
+  file: "just-like-da-vinci.mp3"
 }, {
   name: "Do not sexualize me",
   file: "do-not-sexualize-me.mp3"
