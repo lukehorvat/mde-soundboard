@@ -8,20 +8,17 @@ $(() => {
     onready: () => {
       sounds.forEach(sound => {
         let button = $("<button />", {
-          text: sound.name,
-          disabled: "disabled"
+          text: sound.name
         }).on("click", () => {
           soundManager.stopAll();
           soundManager.getSoundById(sound.name).play();
-        }).appendTo("#sounds");
+        }).appendTo("#sounds").hide();
 
         soundManager.createSound({
           id: sound.name,
           url: `sounds/${sound.file}`,
           autoLoad: true,
-          onload: () => {
-            button.removeAttr("disabled");
-          }
+          onload: () => button.fadeIn(3000)
         });
       });
     }
