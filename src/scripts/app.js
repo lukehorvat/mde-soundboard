@@ -7,8 +7,9 @@ $(() => {
     debugMode: false,
     onready: () => {
       sounds.forEach(sound => {
-        let button = $("<button />", {
+        let button = $("<a />", {
           text: sound.name,
+          href: "#",
           disabled: "disabled"
         }).on("click", () => {
           soundManager.stopAll();

@@ -7,7 +7,7 @@ body {
   text-align: center;
 }
 
-h1, h3, button {
+h1, h3, #sounds > a {
   color: #222;
   font-family: "Changa One", "Courier New", monospace;
   text-transform: uppercase;
@@ -26,17 +26,19 @@ h3 {
   font-size: 3em;
 }
 
-button {
-  font-size: 1.5em;
-  background-color: transparent;
-  border: 2px dotted #555;
-  border-radius: 10px;
+#sounds > a {
+  display: inline-block;
+  font-size: 1.35em;
+  text-decoration: none;
+  background-color: fade(#fff, 40%);
+  border: 2px solid #555;
+  border-radius: 0.3em;
   margin: 10px;
   padding: 10px 20px;
 
   &:hover {
-    border: 2px dashed #555;
-    cursor: pointer;
+    background-color: fade(#fff, 70%);
+    box-shadow: 3px 3px 50px 10px fade(#fff, 15%);
   }
 }
 
