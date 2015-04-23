@@ -9,11 +9,7 @@ $(() => {
       sounds.forEach(sound => {
         let button = $("<a />", {
           text: sound.name,
-          href: "#",
-          disabled: "disabled"
-        }).on("click", () => {
-          soundManager.stopAll();
-          soundManager.getSoundById(sound.name).play();
+          href: "#"
         }).appendTo("#sounds").hide();
 
         let pulseFade = () => button.fadeToggle(400, () => button.queue().length > 0 && pulseFade());
@@ -24,7 +20,13 @@ $(() => {
           id: sound.name,
           url: `sounds/${sound.file}`,
           autoLoad: true,
-          onload: () => button.fadeIn(1000, () => button.removeAttr("disabled")),
+          onload: () => button.fadeIn(1500, () => {
+            // Once sound and button are ready, enable clicking.
+            button.on("click", () => {
+              soundManager.stopAll();
+              soundManager.getSoundById(sound.name).play();
+            });
+          }),
           onplay: startPulseFade,
           onstop: stopPulseFade,
           onfinish: stopPulseFade
