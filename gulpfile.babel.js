@@ -7,6 +7,7 @@ import livereload from "gulp-livereload";
 import uglify from "gulp-uglify";
 import minifyCSS from "gulp-minify-css";
 import less from "gulp-less";
+import autoprefixer from "gulp-autoprefixer";
 import rename from "gulp-rename";
 import rev from "gulp-rev";
 import watch from "gulp-watch";
@@ -54,6 +55,7 @@ gulp.task("build-styles", () => {
     }))
     .pipe(less())
     .pipe(rename(`${env.name}.css`))
+    .pipe(autoprefixer({ browsers: ["> 1%"] }))
     .pipe(gulpif(env.minify, minifyCSS()))
     .pipe(rev())
     .pipe(gulp.dest(`${config.buildDir}/styles`));
