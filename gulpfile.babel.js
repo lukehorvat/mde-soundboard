@@ -16,7 +16,7 @@ import browserify from "browserify";
 import babelify from "babelify";
 import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
-import rimraf from "rimraf";
+import del from "del";
 import runSequence from "run-sequence";
 import express from "express";
 import http from "http";
@@ -62,17 +62,17 @@ gulp.task("build-styles", () => {
 });
 
 gulp.task("build-misc", () => {
-  let imagesFilter = filter("**/*.{ico,gif,jpg,png}");
-  let soundsFilter = filter("**/*.mp3");
+  let imagesFilter = filter("**/*.{ico,gif,jpg,png}", { restore: true });
+  let soundsFilter = filter("**/*.mp3", { restore: true });
 
   return gulp
     .src(config.misc)
     .pipe(imagesFilter)
     .pipe(gulp.dest(`${config.buildDir}/images`))
-    .pipe(imagesFilter.restore())
+    .pipe(imagesFilter.restore)
     .pipe(soundsFilter)
     .pipe(gulp.dest(`${config.buildDir}/sounds`))
-    .pipe(soundsFilter.restore());
+    .pipe(soundsFilter.restore);
 });
 
 gulp.task("build-index", () => {
@@ -81,14 +81,14 @@ gulp.task("build-index", () => {
     .pipe(
       inject(
         gulp.src([`${config.buildDir}/**/*.css`, `${config.buildDir}/**/*.js`], { read: false }),
-        { ignorePath: config.buildDir, addRootSlash: false, removeTags: true }
+        { ignorePath: config.buildDir, addRootSlash: false, removeTags: true, quiet: true }
       )
     )
     .pipe(gulp.dest(config.buildDir));
 });
 
 gulp.task("clean", done => {
-  rimraf(config.buildDir, done);
+  del(config.buildDir, done);
 });
 
 gulp.task("build", ["clean"], done => {
@@ -103,11 +103,11 @@ gulp.task("serve", ["build"], done => {
 });
 
 gulp.task("reload", () => {
-  return gulp.src(config.buildDir).pipe(livereload({ start: true }));
+  return gulp.src(config.buildDir).pipe(livereload({ start: true, quiet: true }));
 });
 
 gulp.task("watch", ["serve", "reload"], () => {
-  return watch(config.sourceDir, () => { runSequence("build", "reload") });
+  return watch(`${config.sourceDir}/**/*`, () => { runSequence("build", "reload") });
 });
 
 gulp.task("default", ["build"]);
