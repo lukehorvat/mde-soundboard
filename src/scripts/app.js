@@ -1,5 +1,5 @@
 import $ from "jquery";
-import {soundManager} from "SoundManager2";
+import {soundManager} from "soundmanager2";
 import sounds from "./sounds";
 
 $(() => {

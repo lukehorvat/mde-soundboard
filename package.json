@@ -2,8 +2,8 @@
   "name": "mde-soundboard",
   "private": true,
   "dependencies": {
-    "SoundManager2": "scottschiller/SoundManager2",
-    "jquery": "2.1.4"
+    "jquery": "2.1.4",
+    "soundmanager2": "2.97.20150601"
   },
   "devDependencies": {
     "babel": "5.8.21",
