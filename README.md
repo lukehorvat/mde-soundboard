@@ -2,7 +2,7 @@
 
 Million Dollar Extreme audio soundboard.
 
-Live version hosted [here](http://lukehorvat.github.io/mde-soundboard).
+Live version hosted [here](http://mde.js.org).
 
 Kudos to Sam for giving me permission to do this.
 
