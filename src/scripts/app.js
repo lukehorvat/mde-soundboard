@@ -7,11 +7,7 @@ $(() => {
     debugMode: false,
     onready: () => {
       sounds.forEach(sound => {
-        let button = $("<a />", {
-          text: sound.name,
-          href: "#"
-        }).appendTo("#sounds").hide();
-
+        let button = $(`<a href="#"><span>${sound.name}</span></a>`).appendTo("#sounds").hide();
         let pulseFade = () => button.fadeToggle(400, () => button.queue().length > 0 && pulseFade());
         let startPulseFade = () => button.queue().length <= 0 && pulseFade();
         let stopPulseFade = () => button.stop(true, true).show();

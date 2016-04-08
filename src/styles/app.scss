@@ -1,0 +1,127 @@
+@import url("//fonts.googleapis.com/css?family=Changa+One");
+
+body {
+  background: radial-gradient(#ff0000, #df0000) fixed;
+  margin: 20px;
+  text-align: center;
+  font-family: "Changa One", "Courier New", monospace;
+  color: #eee;
+}
+
+#header {
+  text-transform: uppercase;
+
+  h1 {
+    font-size: 2.5em;
+    margin: 0px;
+
+    + h2 {
+      margin-top: 10px;
+    }
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: 0px;
+  }
+
+  + #sounds {
+    margin-top: 20px;
+  }
+}
+
+#sounds {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 15%;
+    color: inherit;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: fade-out(#eee, 0.85);
+    border: 2px solid #eee;
+    margin: 5px;
+    padding: 15px;
+
+    &:hover {
+      background: fade-out(#eee, 0.65);
+    }
+  }
+}
+
+#github-fork {
+  img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  body {
+    margin: 30px;
+  }
+
+  #header {
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    + #sounds {
+      margin-top: 30px;
+    }
+  }
+
+  #sounds {
+    a {
+      font-size: 1.2em;
+    }
+  }
+
+  #github-fork {
+    img {
+      display: inherit;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 64em) {
+  body {
+    margin: 50px;
+  }
+
+  #header {
+    h1 {
+      font-size: 4em;
+    }
+
+    h2 {
+      font-size: 2.5em;
+    }
+
+    + #sounds {
+      margin-top: 50px;
+    }
+  }
+
+  #sounds {
+    margin: 0px auto;
+    max-width: 1280px;
+
+    a {
+      font-size: 1.3em;
+    }
+  }
+}
