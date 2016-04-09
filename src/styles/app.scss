@@ -40,18 +40,24 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 
-  a {
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-basis: 35%;
     color: inherit;
     font-size: 1.1em;
-    text-decoration: none;
+    font-family: inherit;
+    text-transform: inherit;
+    cursor: pointer;
     background: fade-out(#eee, 0.85);
     border: 4px solid #eee;
     margin: 5px;
     padding: 15px;
+
+    span {
+      flex: 1;
+    }
 
     &:hover {
       background: fade-out(#eee, 0.65);
@@ -99,7 +105,7 @@ body {
   }
 
   #sounds {
-    a {
+    button {
       font-size: 1.2em;
       flex-basis: 25%;
     }
@@ -131,7 +137,7 @@ body {
     margin: 0px auto;
     max-width: 1280px;
 
-    a {
+    button {
       font-size: 1.3em;
       flex-basis: 15%;
     }

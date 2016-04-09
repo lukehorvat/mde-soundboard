@@ -11,9 +11,9 @@ $(() => {
 
 function loadSound(sound) {
   let button = $(`
-    <a id="${sound.file}" href="#${sound.file}">
+    <button type="button">
       <span><i class="fa fa-cog fa-spin"></i> Loading&hellip;</span>
-    </a>`
+    </button>`
   ).appendTo("#sounds");
   let pulseFade = () => button.fadeToggle(400, () => button.queue().length > 0 && pulseFade());
   let startPulseFade = () => button.queue().length <= 0 && pulseFade();
