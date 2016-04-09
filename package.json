@@ -2,7 +2,8 @@
   "name": "mde-soundboard",
   "private": true,
   "dependencies": {
-    "jquery": "2.1.4",
+    "font-awesome": "4.5.0",
+    "jquery": "2.2.3",
     "soundmanager2": "2.97.20150601"
   },
   "devDependencies": {

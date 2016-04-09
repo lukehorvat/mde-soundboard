@@ -12,9 +12,9 @@ $(() => {
 function loadSound(sound) {
   let button = $(`
     <a id="${sound.file}" href="#${sound.file}">
-      <span>${sound.name}</span>
+      <span><i class="fa fa-cog fa-spin"></i> Loading&hellip;</span>
     </a>`
-  ).appendTo("#sounds").hide();
+  ).appendTo("#sounds");
   let pulseFade = () => button.fadeToggle(400, () => button.queue().length > 0 && pulseFade());
   let startPulseFade = () => button.queue().length <= 0 && pulseFade();
   let stopPulseFade = () => button.stop(true, true).show();
@@ -23,13 +23,10 @@ function loadSound(sound) {
     id: sound.name,
     url: `sounds/${sound.file}`,
     onload: () => {
-      button.fadeIn(1500, () => {
-        // Once sound and button are ready, enable clicking.
-        button.on("click", () => {
-          soundManager.stopAll();
-          soundManager.getSoundById(sound.name).play();
-        });
-      })
+      button.on("click", () => {
+        soundManager.stopAll();
+        soundManager.getSoundById(sound.name).play();
+      }).children("span").text(sound.name);
     },
     onplay: startPulseFade,
     onstop: stopPulseFade,

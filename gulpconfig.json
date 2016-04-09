@@ -6,6 +6,7 @@
   "script": "src/scripts/app.js",
   "style": "src/styles/app.scss",
   "misc": [
+    "node_modules/font-awesome/fonts/**/*.{otf,eot,svg,ttf,woff,woff2}",
     "src/images/**/*.{ico,gif,jpg,png}",
     "src/sounds/**/*.mp3"
   ],
