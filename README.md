@@ -4,13 +4,13 @@ Million Dollar Extreme audio soundboard.
 
 Live version hosted [here](http://mde.js.org).
 
-Kudos to Sam for giving me permission to do this.
-
 ## Setup
 
 To run a local instance, issue the following commands:
 
 ```bash
+$ git clone git@github.com:lukehorvat/mde-soundboard.git
+$ cd mde-soundboard
 $ npm install
 $ npm start
 ```
