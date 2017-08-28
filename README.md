@@ -1,5 +1,7 @@
 # mde-soundboard
 
+![](https://raw.githubusercontent.com/lukehorvat/mde-soundboard/master/src/images/header.png)
+
 Million Dollar Extreme audio soundboard.
 
 Live version hosted [here](http://mde.js.org).
