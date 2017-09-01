@@ -64,6 +64,10 @@ body {
     &:hover {
       background: fade-out(#eee, 0.65);
     }
+
+    &:focus {
+      outline: none; // Disable Chrome's blue outline.
+    }
   }
 
   + #footer {
