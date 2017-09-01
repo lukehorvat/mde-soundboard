@@ -4,7 +4,7 @@
 
 Million Dollar Extreme audio soundboard.
 
-Live version hosted [here](http://mde.js.org).
+Live version hosted [here](https://mde.js.org).
 
 ## Setup
 
