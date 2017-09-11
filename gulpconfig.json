@@ -3,8 +3,8 @@
   "sourceDir": "src",
   "buildDir": "dist",
   "index": "src/index.html",
-  "script": "src/scripts/app.js",
-  "style": "src/styles/app.scss",
+  "script": "src/scripts/index.js",
+  "style": "src/styles/index.scss",
   "misc": [
     "node_modules/font-awesome/fonts/**/*.{otf,eot,svg,ttf,woff,woff2}",
     "src/images/**/*.{ico,gif,jpg,png}",
