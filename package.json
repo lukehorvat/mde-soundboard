@@ -5,9 +5,8 @@
     "start": "./node_modules/.bin/gulp watch"
   },
   "dependencies": {
-    "font-awesome": "4.5.0",
-    "jquery": "2.2.3",
-    "soundmanager2": "2.97.20150601"
+    "font-awesome": "4.7.0",
+    "soundmanager2": "2.97.20170602"
   },
   "devDependencies": {
     "babel-preset-es2015": "6.24.1",

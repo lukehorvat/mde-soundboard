@@ -68,6 +68,15 @@ body {
     &:focus {
       outline: none; // Disable Chrome's blue outline.
     }
+
+    &.fade {
+      animation: fade 400ms ease-in-out infinite alternate;
+
+      @keyframes fade {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+    }
   }
 
   + #footer {
