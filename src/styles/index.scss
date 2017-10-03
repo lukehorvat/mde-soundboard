@@ -2,7 +2,6 @@
 @import "node_modules/font-awesome/scss/font-awesome";
 
 body {
-  background: radial-gradient(#ff0000, #df0000) fixed;
   margin: 0px;
   padding: 20px;
   color: #eee;
@@ -10,6 +9,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 1px 1px 5px #333;
+  background: url("../images/background.png"), radial-gradient(#ff0000, #df0000) fixed;
 }
 
 #header {
