@@ -1,4 +1,4 @@
-# mde-soundboard
+# MDE Soundboard
 
 ![](https://raw.githubusercontent.com/lukehorvat/mde-soundboard/master/src/images/header.png)
 
